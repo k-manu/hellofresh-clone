@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import HelloFresh Fonts */
+@font-face {
+  font-family: 'Agrandir-Tight-Bold';
+  src: url('/fonts/agrandir-tight-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agrandir-Tight-Black';
+  src: url('/fonts/agrandir-tight-black-webfont.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('/fonts/roboto-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 39 19% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 39 19% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 39 19% 17%;
+    --primary: 25 100% 46%; /* rgb(235, 101, 0) */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 16 100% 74%;
+    --secondary-foreground: 39 19% 17%;
+    --muted: 25 100% 97%;
+    --muted-foreground: 39 19% 40%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 39 19% 87%;
+    --input: 39 19% 87%;
+    --ring: 25 100% 46%;
+    --radius: 0.5rem;
+
+    /* NomNomBox specific colors */
+    --nomnom-orange: 25 100% 46%;
+    --nomnom-light-orange: 25 100% 96%;
+    --nomnom-dark-orange: 25 80% 30%;
+    --nomnom-yellow: 42 100% 60%;
+    --nomnom-gold: 43 100% 50%;
+  }
+
+  body {
+    @apply bg-white text-foreground;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Agrandir-Tight-Bold', sans-serif;
+    @apply font-bold;
+  }
+
+  h1 {
+    font-family: 'Agrandir-Tight-Black', sans-serif;
+  }
+
+  button, .button {
+    @apply rounded-md transition-all duration-200;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container-hf {
+    @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-orange-700 text-white rounded-md py-3 px-6 font-medium;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-background rounded-md py-2.5 px-6 font-medium;
+  }
+}
