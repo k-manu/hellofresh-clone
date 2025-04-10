@@ -9,6 +9,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#323623]">
+              <span className="nomnom-logo text-orange-600">NomNom</span><span className="nomnom-logo-box">Box</span> <br className="hidden md:block" />
               Authentic Indian <br className="hidden md:block" />
               <span className="text-orange-600">Meal Kits</span> Delivered
             </h1>

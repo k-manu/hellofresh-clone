@@ -1,9 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import PlanCard from '@/components/plans/PlanCard';
-import MealCountSelector from '@/components/plans/MealCountSelector';
-import PeopleCountSelector from '@/components/plans/PeopleCountSelector';
+import PlansSection from '@/components/plans/PlansSection';
 
 export default function PlansPage() {
   return (
@@ -19,66 +17,8 @@ export default function PlansPage() {
           </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6 mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-              <h2 className="text-2xl font-bold text-primary-dark mb-6">How many people are you cooking for?</h2>
-              <PeopleCountSelector />
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-primary-dark mb-6">How many meals per week?</h2>
-              <MealCountSelector />
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <PlanCard
-            title="Classic Plan"
-            subtitle="A variety of meat, fish, and seasonal produce"
-            imageSrc="/images/plans/classic-plan.jpg"
-            features={[
-              "Wide variety of recipes weekly",
-              "Locally sourced ingredients",
-              "Perfectly portioned for zero waste"
-            ]}
-            price={1099}
-            pricePerServing={229}
-            discountedPrice={549}
-            discountPercentage={50}
-          />
-          
-          <PlanCard
-            title="Veggie Plan"
-            subtitle="Plant-based recipes with seasonal produce"
-            imageSrc="/images/plans/veggie-plan.jpg"
-            features={[
-              "Plant-forward vegetarian meals",
-              "Farm-fresh produce",
-              "High-protein vegetarian options"
-            ]}
-            price={1099}
-            pricePerServing={229}
-            discountedPrice={549}
-            discountPercentage={50}
-            popular={true}
-          />
-          
-          <PlanCard
-            title="Family Plan"
-            subtitle="Family-friendly meals everyone will love"
-            imageSrc="/images/plans/family-plan.jpg"
-            features={[
-              "Kid-approved recipes",
-              "Quick 30-minute meal options",
-              "Easy-to-follow recipes"
-            ]}
-            price={1199}
-            pricePerServing={199}
-            discountedPrice={599}
-            discountPercentage={50}
-          />
-        </div>
+        {/* Client-side plans section */}
+        <PlansSection />
 
         <div className="bg-background rounded-lg p-10 text-center mb-16">
           <h2 className="text-3xl font-bold text-primary-dark mb-4">
@@ -155,22 +95,22 @@ export default function PlansPage() {
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-md p-8 mb-16">
+        <div className="bg-orange-500 text-white rounded-lg shadow-md p-8 mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-primary-dark mb-4">
+              <h2 className="text-3xl font-bold text-white mb-4">
                 Get Indian cuisine delivered to your door
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-white mb-6">
                 Experience the rich flavors of India with our authentic recipe kits. Each meal comes with premium spices, fresh ingredients, and easy-to-follow recipes.
               </p>
-              <Link href="/register" className="btn-primary">
+              <Link href="/register" className="bg-white text-orange-500 hover:bg-orange-100 px-6 py-3 rounded-md font-bold inline-block transition-colors">
                 Get Started Now
               </Link>
             </div>
             <div className="relative h-64 w-full">
               <Image
-                src="/images/indian-cooking-kit.jpg"
+                src="/images/indian_cooking_kit.jpg"
                 alt="Indian Cooking Kit"
                 fill
                 className="object-cover rounded-lg"

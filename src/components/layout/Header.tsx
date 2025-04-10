@@ -36,11 +36,14 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-orange-600">NomNom<span className="text-green-600">Box</span></span>
+            <span className="text-2xl font-bold">
+              <span className="nomnom-logo text-orange-600">NomNom</span>
+              <span className="nomnom-logo-box">Box</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:flex items-center space-x-8">
             <ul className="flex space-x-1">
               <li className="relative">
                 <button
@@ -117,12 +120,15 @@ export default function Header() {
                 </Link>
               </li>
             </ul>
-          </nav>
 
-          {/* Login Button */}
-          <button className="rounded-md border border-orange-500 px-4 py-2 text-sm font-medium text-orange-500 hover:bg-orange-50">
-            Log in
-          </button>
+            {/* Login Button */}
+            <Link
+              href="/register"
+              className="text-gray-600 hover:text-primary font-semibold"
+            >
+              Sign Up
+            </Link>
+          </nav>
         </div>
 
         {/* Mobile menu */}
@@ -241,9 +247,12 @@ export default function Header() {
                 </Link>
               </li>
               <li className="pt-2">
-                <button className="w-full rounded-md border border-orange-500 px-4 py-2 text-sm font-medium text-orange-500 hover:bg-orange-50">
-                  Log in
-                </button>
+                <Link
+                  href="/register"
+                  className="w-full rounded-md border border-orange-500 px-4 py-2 text-sm font-medium text-orange-500 hover:bg-orange-50"
+                >
+                  Sign Up
+                </Link>
               </li>
             </ul>
           </div>

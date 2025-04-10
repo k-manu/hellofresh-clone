@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Users } from 'lucide-react';
+import { usePlan } from '@/contexts/PlanContext';
 
 const PeopleCountSelector = () => {
-  const [peopleCount, setPeopleCount] = useState(2);
+  const { peopleCount, setPeopleCount } = usePlan();
   
   const peopleOptions = [
     { value: 2, label: '2 People' },

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Pensum+Pro:ital@1&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,4 +107,18 @@
   .btn-outline {
     @apply border-2 border-primary text-primary hover:bg-background rounded-md py-2.5 px-6 font-medium;
   }
+}
+
+/* Custom Classes */
+.nomnom-logo {
+  font-family: 'Pensum Pro', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.nomnom-logo-box {
+  font-family: 'Pensum Pro', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: #000;
 }

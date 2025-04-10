@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { usePlan } from '@/contexts/PlanContext';
 
 const MealCountSelector = () => {
-  const [mealCount, setMealCount] = useState(3);
+  const { mealCount, setMealCount } = usePlan();
   
   const mealOptions = [
     { value: 2, label: '2' },

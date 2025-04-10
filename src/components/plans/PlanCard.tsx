@@ -1,17 +1,17 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Check } from 'lucide-react';
+import { usePlan } from '@/contexts/PlanContext';
 
 interface PlanCardProps {
   title: string;
   subtitle: string;
   imageSrc: string;
   features: string[];
-  price: number;
-  pricePerServing: number;
-  discountedPrice: number;
-  discountPercentage: number;
+  basePrice: number;
   popular?: boolean;
 }
 
@@ -20,12 +20,21 @@ const PlanCard: React.FC<PlanCardProps> = ({
   subtitle,
   imageSrc,
   features,
-  price,
-  pricePerServing,
-  discountedPrice,
-  discountPercentage,
+  basePrice,
   popular = false
 }) => {
+  const { 
+    peopleCount, 
+    mealCount, 
+    calculatePrice, 
+    calculateDiscountedPrice, 
+    calculatePricePerServing 
+  } = usePlan();
+  
+  const price = calculatePrice(basePrice);
+  const discountedPrice = calculateDiscountedPrice(basePrice);
+  const pricePerServing = calculatePricePerServing(basePrice);
+
   return (
     <div className={`bg-white rounded-lg shadow-md overflow-hidden ${popular ? 'ring-2 ring-primary' : ''} relative`}>
       {popular && (
@@ -65,13 +74,17 @@ const PlanCard: React.FC<PlanCardProps> = ({
             </div>
           </div>
           
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center mb-1">
             <span className="text-gray-600 text-sm">Price per serving</span>
             <span className="text-gray-600 text-sm">₹{pricePerServing}</span>
           </div>
           
+          <div className="flex justify-between items-center text-xs text-gray-500">
+            <span>{peopleCount} people × {mealCount} meals</span>
+          </div>
+          
           <div className="bg-primary/10 text-primary text-center py-1 px-2 rounded mt-3 text-sm font-medium">
-            SAVE {discountPercentage}% on First Box
+            SAVE 50% on First Box
           </div>
         </div>
         
